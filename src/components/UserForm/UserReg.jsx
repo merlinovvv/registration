@@ -13,7 +13,7 @@ function UserReg({ changeForm }) {
   });
   //стейт для проверки паролей
   const [valueCorrect, setValueCorrect] = useState(true);
-  //функция для отправки данных формы (передается в каждую компоненту)
+  //функция для отправки данных формы
   function submitForm(e) {
     e.preventDefault();
 
