@@ -11,6 +11,7 @@ function UserReg({ changeForm }) {
     file: '',
     agree: '',
   });
+  //стейт для проверки паролей
   const [valueCorrect, setValueCorrect] = useState(true);
   //функция для отправки данных формы (передается в каждую компоненту)
   function submitForm(e) {
@@ -25,6 +26,7 @@ function UserReg({ changeForm }) {
     setValues({ ...values, [name]: value });
   }
 
+  //здесь идет проверка на совпадения паролей. Если не совпадают, то в стейт устанавливаем false. Этот стейт потом используем в форме
   useEffect(() => {
     if (
       values.repeat_password.length !== 0 &&
@@ -102,7 +104,7 @@ function UserReg({ changeForm }) {
           className={`${style.input_label} ${
             !valueCorrect ? style.uncorrect : ''
           }`}>
-            {!valueCorrect ? 'Password mismatch' : 'Repeat password'}
+          {!valueCorrect ? 'Password mismatch' : 'Repeat password'}
         </label>
       </div>
       <div className={style.file_input}>
